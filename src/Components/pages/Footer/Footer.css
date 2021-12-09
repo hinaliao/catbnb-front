@@ -1,1 +1,86 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+* {
+  font-family: 'Quicksand', sans-serif;
+  color: #4B4278;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  padding-bottom: 40px; 
+}
+
+.footer-container {  
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;  
+  background-color: #F6D1B6;
+}
+
+h4 {  
+  margin: 22px 0;
+  color: #4B4278;
+  font-weight: bold !important;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 50%;
+}
+
+.social a:hover {
+  transition: color 0.2s;
+  color: #D1E3AB;
+}
+
+ul {
+  list-style: none;
+}
+
+.links {
+  display: block;
+  text-decoration: none;
+  transition: color 0.2s;
+  color: #D1E3AB;
+}
+
+.links:hover {
+  text-decoration: none;
+  color: #D1E3AB;
+}
+
+p {
+  color:#4B4278;
+  font-weight: 500;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.social-media-icons {
+  margin: 3px;
+}
+
+.pe {
+  margin-bottom: 15px;
+}
+
+.centered {
+  align-items: center;
+}
+
+.pe p {
+  margin: 10px 0;
+}
+
+i {
+  padding-right: 10px;
+  color: rgba(29, 49, 120, 1);
+}

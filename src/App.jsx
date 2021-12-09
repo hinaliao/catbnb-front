@@ -1,14 +1,16 @@
-import React from 'react';
-// import React, { useState } from 'react';
+import React /* { useState } */ from 'react';
 // import { Routes, Route } from 'react-router-dom';
-import './App.css';
 
 import Navbar from './Components/pages/HomePage/Navbar/Navbar';
+import Footer from './Components/pages/Footer/Footer';
+
+import './App.css';
 
 const App = () => {
   return (
     <div>
       <Navbar />
+      <Footer />
     </div>
   );
 };

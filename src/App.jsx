@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+// import React, { useState } from 'react';
+// import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
-const App = () => <h2>Hello Cat Sitters!</h2>;
+import Navbar from './Components/pages/HomePage/Navbar/Navbar';
+
+const App = () => {
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
+};
 
 export default App;

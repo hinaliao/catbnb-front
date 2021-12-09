@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React /* { useState } */ from 'react';
+// import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Footer from './Components/pages/Footer/Footer';
 
-const App = () => <h2>Hello Cat Sitters!</h2>;
-
+const App = () => {
+  return (
+    <Footer />
+  );
+};
 export default App;

@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 
-.container h5 {
+.container h5:hover {
   border-bottom: thin;
 }
 

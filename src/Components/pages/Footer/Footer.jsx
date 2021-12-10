@@ -6,7 +6,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <Footer>
+    <div className="footer">
       <div className="container">
         <h4>Sobre</h4>
         <Link to="#">
@@ -42,29 +42,32 @@ const Footer = () => {
         <h5>+55 11 99898-9898</h5>
         <h5>Mídias Sociais</h5>
         <div className="social">
-          <Link
-            to="https://www.linkedin.com/in/michelle-p-liao/"
+          <a
+            href="https://www.linkedin.com/in/michelle-p-liao/"
             target="_blank"
+            rel="noreferrer"
           >
             <BsLinkedin style={{ fontSize: '1.3rem' }} />
-          </Link>
+          </a>
           &emsp;
-          <Link
-            to={{ pathname: 'https://github.com/HinaLiao/catbnb-front' }}
+          <a
+            href="https://github.com/HinaLiao/catbnb-front"
             target="_blank"
+            rel="noreferrer"
           >
             <BsGithub style={{ fontSize: '1.3rem' }} />
-          </Link>
+          </a>
           &emsp;
-          <Link
-            to={{ pathname: 'https://www.instagram.com/juliasakakibara/' }}
+          <a
+            href="https://www.instagram.com/juliasakakibara/"
             target="_blank"
+            rel="noreferrer"
           >
             <BsInstagram style={{ fontSize: '1.3rem' }} />
-          </Link>
+          </a>
         </div>
       </div>
-    </Footer>
+    </div>
   );
 };
 

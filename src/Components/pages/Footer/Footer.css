@@ -2,7 +2,7 @@
   line-height: 20px;
 }
 
-Footer {
+.footer {
   background-color: #f6d1b6;
   height: 220px;
   width: 100%;
@@ -35,14 +35,13 @@ Footer {
   align-content: center;
 }
 
-@media (max-width: 991.98px) {
-  Footer {
-    height: 220px;
+@media (max-width: 575.98px) {
+  .footer {
+    background-color: #f6d1b6;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 }
-
-/* @media (max-width: 575.98px) {
-} */

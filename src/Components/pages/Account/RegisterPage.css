@@ -82,14 +82,18 @@ Form > h4 {
 }
 
 @media (max-width: 991.98px) {
-  .all {
+  .all-pai {
     width: 80vw;
-    left: 10%;
+    transform: translate(15%, 85%);
+  }
+
+  .signup-img {
+    height: 30vh;
   }
 }
 
 @media (max-width: 575.98px) {
-  .signup-bg {
+  .signup-img {
     display: none;
   }
 }

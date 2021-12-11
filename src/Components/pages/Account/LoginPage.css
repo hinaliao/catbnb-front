@@ -78,18 +78,18 @@ h4 > a:hover {
 }
 
 @media (max-width: 991.98px) {
-  .all {
+  .all-pai {
     width: 80vw;
-    left: 10%;
+    transform: translate(15%, 85%);
   }
 
-  .login-bg {
-    height: 30vh;
+  .login-img {
+    height: 28vh;
   }
 }
 
 @media (max-width: 575.98px) {
-  .login-bg {
+  .login-img {
     display: none;
   }
 }

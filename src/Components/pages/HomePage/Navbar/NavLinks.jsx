@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 // import { Login, Register } from '../../../index';
-import Modal from '../../../templates/Modal/Modal';
+// import Modal from '../../../templates/Modal/Modal';
 
 const NavLinks = (props) => {
   const { isMobile, closeMenu } = props;
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => setShow(!show);
   // const handleShow = () => setShow(true);
 
   const animateFrom = { opacity: 0, y: -40 };
@@ -48,11 +48,11 @@ const NavLinks = (props) => {
           >
             <button
               type="button"
-              onClick={() => (isMobile || !isMobile) && setShow(true) && closeMenu()}
+              onClick={() => (isMobile || !isMobile) && handleClose() && closeMenu()}
             >
               login
             </button>
-            {show && <Modal handleClose={!handleClose} />}
+
           </motion.li>
         </ul>
       </nav>

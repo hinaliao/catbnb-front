@@ -1,1 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+.playincat-img{
+    background-image:url(../../../Images/gato-brincando.jpg);
+    background-size: cover;
+}
+
+.btn-agende{
+ background-color:chartreuse
+}

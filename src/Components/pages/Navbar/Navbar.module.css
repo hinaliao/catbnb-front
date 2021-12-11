@@ -7,13 +7,13 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   align-items: flex-end;
   padding-right: 30px;
   width: 180px;
   height: 200px;
   background-color: #d1e3ab;
-  border-radius: 30px;
+  border-radius: 45px;
   top: 25px;
   right: 8%;
 }
@@ -51,13 +51,14 @@ nav ul a:hover {
 
 .hamburguer {
   position: absolute;
+  z-index: 2;
   right: 10%;
   cursor: pointer;
   top: 45px;
   color: #4b4278;
 }
 
-nav ul li button {
+nav ul li button {  
   background-color: #d1e3ab;
   color: #4b4278;
   font-family: 'Quicksand', sans-serif;
@@ -90,11 +91,11 @@ nav ul li button:hover {
   }
 
   .Navbar nav > ul {
-    z-index: -1;
+    z-index: 1;
     width: 130px;
-    height: 180px;
-    padding-right: 5px;
-    right: 7%;
+    height: 160px;
+    padding-right: 8px;
+    right: 9%;
   }
 
   .Navbar nav > ul > li {
@@ -102,6 +103,16 @@ nav ul li button:hover {
   }
 
   li:first-child {
-    padding-top: 40px;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .Navbar nav > ul {
+    z-index: 1;
+    width: 130px;
+    height: 160px;
+    padding-right: 8px;
+    right: 7%;
   }
 }

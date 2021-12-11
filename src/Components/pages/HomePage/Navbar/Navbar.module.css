@@ -43,7 +43,7 @@ nav ul a {
   font-weight: 500;
 }
 
-nav ul a:hover {  
+nav ul a:hover {
   color: #4b4278;
   border-bottom: 2px solid #4b4278;
   font-weight: 700;
@@ -55,6 +55,33 @@ nav ul a:hover {
   cursor: pointer;
   top: 45px;
   color: #4b4278;
+}
+
+nav ul li button {
+  background-color: #d1e3ab;
+  color: #4b4278;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
+  box-shadow: none;
+  border: 2px solid #4b4278;
+  border-radius: 25px;
+  padding: 5px 20px;
+}
+
+nav ul li button:hover {
+  background-image: linear-gradient(
+    90deg,
+    /* rgba(103, 71, 143, 1) 0%, */
+    rgba(93, 71, 143, 1) 35%,
+    rgba(75, 66, 120, 1) 100%
+  );
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);  
+  color: #d1e3ab;
+  transition: all 0.4s ease-in-out;
+}
+
+.Navbar nav > ul > li:last-child {
+  padding-right: 10px;
 }
 
 @media (max-width: 991.98px) {

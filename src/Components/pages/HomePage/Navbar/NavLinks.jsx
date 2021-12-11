@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 // import { Login, Register } from '../../../index';
+import Modal from '../../../templates/Modal/Modal';
 
 const NavLinks = (props) => {
   const { isMobile, closeMenu } = props;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   const animateFrom = { opacity: 0, y: -40 };
   const animateTo = { opacity: 1, y: 0 };
@@ -18,23 +18,7 @@ const NavLinks = (props) => {
   // const [signupOpen, setSignupOpen] = useState(false);
 
   return (
-    <>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton />
-        <Modal.Body>
-          {/* <Login
-            open={loginOpen}
-            setLoginOpen={setLoginOpen}
-            setSignupOpen={setSignupOpen}
-          />
-          <Register
-            open={signupOpen}
-            setLoginOpen={setLoginOpen}
-            setSignupOpen={setSignupOpen}
-          /> */}
-        </Modal.Body>
-      </Modal>
-
+    <div>
       <nav>
         <ul>
           <motion.li
@@ -62,17 +46,17 @@ const NavLinks = (props) => {
             animate={animateTo}
             transition={{ delay: 0.3 }}
           >
-            <Button
-              href="#"
-              variant="link"
-              onClick={() => (isMobile || !isMobile) && handleShow && closeMenu()}
+            <button
+              type="button"
+              onClick={() => (isMobile || !isMobile) && setShow(true) && closeMenu()}
             >
-              Login
-            </Button>
+              login
+            </button>
+            {show && <Modal handleClose={!handleClose} />}
           </motion.li>
         </ul>
       </nav>
-    </>
+    </div>
   );
 };
 

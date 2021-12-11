@@ -24,15 +24,16 @@
   display: flex;
   flex-direction: column;
   height: 180px;
-  justify-content: space-between;
+  justify-content: space-between;  
 }
 
-.container h5:hover {
-  border-bottom: thin;
+.container a {
+  text-decoration: none;
+  color: #4B4278;
 }
 
-.social {
-  align-content: center;
+.container a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 575.98px) {

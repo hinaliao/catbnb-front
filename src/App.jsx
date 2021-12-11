@@ -9,6 +9,7 @@ import {
   ProtectedRoute,
   UserProtectedRoute,
 } from './Components';
+import DateRangePicker from './Components/misc/DateRangePicker/DateRangePicker';
 
 import './App.css';
 
@@ -40,7 +41,6 @@ const App = () => {
   return (
     <div>
       <Navbar isUserLogged={isUserLogged} defineRole={defineRole} />
-
       <Routes>
         <Route path="/login" element={<Login loginUser={loginUser} />} />
         <Route path="/register" element={<SignUp />} />
@@ -68,7 +68,7 @@ const App = () => {
           )}
         />
       </Routes>
-
+      <DateRangePicker />
       <Footer />
     </div>
   );

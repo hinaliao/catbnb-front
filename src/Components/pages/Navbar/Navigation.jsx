@@ -4,8 +4,9 @@ import { MdOutlineClose } from 'react-icons/md';
 import NavLinks from './NavLinks';
 import style from './Navbar.module.css';
 
-const Navigation = () => {
+const Navigation = ({ isUserLogged, verifyRole }) => {
   const [open, setOpen] = useState(false);
+
   const hamburguerIcon = (
     <FiMenu
       className={style.hamburguer}
@@ -27,7 +28,13 @@ const Navigation = () => {
   return (
     <nav className={style.Navigation}>
       {open ? closeBtn : hamburguerIcon}
-      {open && <NavLinks closeMenu={closeMenu} />}
+      {open && (
+        <NavLinks
+          closeMenu={closeMenu}
+          isUserLogged={isUserLogged}
+          verifyRole={verifyRole}
+        />
+      )}
     </nav>
   );
 };

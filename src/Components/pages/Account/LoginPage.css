@@ -1,0 +1,95 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.all-pai {
+  width: 45%;
+  transform: translate(70%, 30%);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: center;  
+}
+
+.all {
+  width: 100%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: absolute; 
+}
+
+.login-img {
+  border-radius: 200px;
+  width: 32%;
+  height: 40vh;
+  background-image: url('../../../Images/kitty-login.jpg');
+  background-size: cover;  
+  background-repeat: no-repeat;
+  box-shadow: 10px 8px 5px #D1E3AB;
+  padding: 20px;
+}
+
+.login-content {
+  flex: 1;
+  padding: 25px;
+  padding-left: 35px;
+}
+
+.login-form {
+  font-family: 'Lato', sans-serif;
+}
+
+.form-label {
+  color: #4b4278;
+  margin-top: 10px 8px 5px 8px;
+  font-size: 18px;
+}
+
+.form-control {
+  border: 0.5px solid #4b4278;
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
+
+h4 > a {
+  color: #4b4278;
+  text-decoration: none;
+}
+
+h4 > a:hover {
+  color: #4b4278;
+  text-decoration: none;
+}
+
+.login-btn {
+  background-color: #4b4278;
+  color: #fff;
+  width: 100%;
+  border: 1px transparent;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.login-btn:hover {
+  background-color: #d1e3ab;
+  color: #4b4278;
+  transition: 0.4s;
+}
+
+@media (max-width: 991.98px) {
+  .all {
+    width: 80vw;
+    left: 10%;
+  }
+
+  .login-bg {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .login-bg {
+    display: none;
+  }
+}

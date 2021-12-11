@@ -57,7 +57,7 @@ const App = () => {
         />
 
         <Route
-          path="/agendamentos"
+          path="/meus-agendamentos"
           element={(
             <UserProtectedRoute
               isLogged={isUserLogged}

@@ -35,7 +35,7 @@ li:first-child {
   align-items: center;
 }
 
-a:-webkit-any-link {
+nav ul a {
   text-decoration: none;
   color: #4b4278;
   font-family: 'Quicksand', sans-serif;
@@ -43,7 +43,8 @@ a:-webkit-any-link {
   font-weight: 500;
 }
 
-a:hover {
+nav ul a:hover {  
+  color: #4b4278;
   border-bottom: 2px solid #4b4278;
   font-weight: 700;
 }

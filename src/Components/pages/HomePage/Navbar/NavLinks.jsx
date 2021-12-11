@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Login, Register } from '../../../index';
+// import { Login, Register } from '../../../index';
 
 const NavLinks = (props) => {
   const { isMobile, closeMenu } = props;
@@ -14,15 +14,15 @@ const NavLinks = (props) => {
   const animateFrom = { opacity: 0, y: -40 };
   const animateTo = { opacity: 1, y: 0 };
 
-  const [loginOpen, setLoginOpen] = useState(false);
-  const [signupOpen, setSignupOpen] = useState(false);
+  // const [loginOpen, setLoginOpen] = useState(false);
+  // const [signupOpen, setSignupOpen] = useState(false);
 
   return (
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton />
         <Modal.Body>
-          <Login
+          {/* <Login
             open={loginOpen}
             setLoginOpen={setLoginOpen}
             setSignupOpen={setSignupOpen}
@@ -31,7 +31,7 @@ const NavLinks = (props) => {
             open={signupOpen}
             setLoginOpen={setLoginOpen}
             setSignupOpen={setSignupOpen}
-          />
+          /> */}
         </Modal.Body>
       </Modal>
 

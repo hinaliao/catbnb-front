@@ -1,16 +1,21 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 /* 
   font-family: 'Lato', sans-serif;  
 */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Quicksand', sans-serif;
-  color: #4B4278;
+  color: #4b4278;
 }
 
 h4 {
@@ -21,8 +26,22 @@ h5 {
   font-size: 0.8rem !important;
 }
 
-body {
+#body-container {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
+}
+
+@media (max-width: 991.98px) {
+  #body-container {
+    min-height: 85vh;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #body-container {
+    min-height: 70vh;
+    padding-bottom: 20px;
+  }
 }

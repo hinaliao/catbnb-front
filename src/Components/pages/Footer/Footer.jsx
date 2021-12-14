@@ -6,6 +6,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
+
     <div className="footer">
       <div className="container">
         <h4>Sobre</h4>
@@ -49,7 +50,7 @@ const Footer = () => {
           >
             <BsLinkedin style={{ fontSize: '1.3rem' }} />
           </a>
-          &emsp;
+              &emsp;
           <a
             href="https://github.com/HinaLiao/catbnb-front"
             target="_blank"
@@ -57,7 +58,7 @@ const Footer = () => {
           >
             <BsGithub style={{ fontSize: '1.3rem' }} />
           </a>
-          &emsp;
+              &emsp;
           <a
             href="https://www.instagram.com/juliasakakibara/"
             target="_blank"
@@ -68,6 +69,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

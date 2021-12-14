@@ -8,7 +8,17 @@
   font-family: 'Lato', sans-serif;  
 */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   font-family: 'Quicksand', sans-serif;
   color: #4B4278;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content-wrap {
+  flex: 1;
+}
+

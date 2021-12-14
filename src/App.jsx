@@ -10,9 +10,11 @@ import './App.css';
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <HomePage />
+    <div className="page-conteiner">
+      <div className="content-wrap">
+        <Navbar />
+        <HomePage />
+      </div>
       <Footer />
     </div>
   );

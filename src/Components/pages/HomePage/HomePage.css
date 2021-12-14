@@ -1,9 +1,75 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+*{
+    font-family: 'Quicksand', sans-serif;
+    color: #4B4278;
+  }
+
+.homePage{
+max-height:100vh ;
+}
+
+.h1{
+    font-size: 2.5rem;
+}
+
+.h2{
+    font-size: 2rem;
+}
+
+.h3{
+    font-size: 1.5rem;
+}
+
+
 .playincat-img{
     background-image:url(../../../Images/gato-brincando.jpg);
     background-size: cover;
 }
 
 .btn-agende{
- background-color:chartreuse
+ background-color:#D1E3AB;
+ color: #4B4278;
+ border: transparent;
+ border-radius: 18px;
+}
+
+.card-home{
+margin-top: 50px;;
+border: none;
+color: #4B4278;
+}
+
+.section1{
+max-width:70vw;
+justify-items: center;}
+
+
+.playincat-img{
+border-radius: 170px;
+width: 40%;
+height: 70vh;
+background-image: url('../../../Images/gato-brincando.jpg');
+box-shadow: 10px 8px 5px #D1E3AB;
+}
+
+.orangecat-img{
+border-radius: 170px;
+width: 40%;
+height: 70vh;
+background-image: url('../../../Images/gato-laranja.jpg');
+box-shadow: 10px 8px 5px #FFBC8C;
+}
+
+.bluecat-img{
+border-radius: 170px;
+width: 40%;
+height: 70vh;
+background-image: url('../../../Images/gato-azul.jpg');
+box-shadow: 10px 8px 5px #A9DBE5;
+}
+
+.cat-img{
+background-size: cover;  
+background-repeat: no-repeat;
+padding: 20px;
 }

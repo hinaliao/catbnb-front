@@ -6,25 +6,24 @@ import Footer from './Components/pages/Footer/Footer';
 import {
   Login,
   SignUp,
+  HomePage,
+  Services,
   ProtectedRoute,
-  UserProtectedRoute,
 } from './Components';
-import DateRangePicker from './Components/misc/DateRangePicker/DateRangePicker';
+// import DateRangePicker from './Components/misc/DateRangePicker/DateRangePicker';
 
 import './App.css';
 
 const App = () => {
   const verifyLogin = () => {
     const token = localStorage.getItem('token');
-
     return !!token;
   };
 
-  const verifyRole = () => {
-    const role = localStorage.getItem('role');
-
-    return !!role;
-  };
+  // const verifyRole = () => {
+  //   const role = localStorage.getItem('role');
+  //   return !!role;
+  // };
 
   const [isUserLogged, setIsUserLogged] = useState(verifyLogin());
 
@@ -32,45 +31,36 @@ const App = () => {
     setIsUserLogged(true);
   };
 
-  const [roleMatches, setRoleMatches] = useState(verifyRole());
+  // const [roleMatches, setRoleMatches] = useState(verifyRole());
 
-  const defineRole = () => {
-    setRoleMatches(true);
-  };
+  // const defineRole = () => {
+  //   setRoleMatches(true);
+  // };
 
   return (
     <div>
-      <body>
-        <Navbar isUserLogged={isUserLogged} defineRole={defineRole} />
+      <div id="body-container">
+        <Navbar isUserLogged={isUserLogged} /* defineRole={defineRole} */ />
         <Routes>
           <Route path="/login" element={<Login loginUser={loginUser} />} />
           <Route path="/register" element={<SignUp />} />
 
-          <Route
-            path="/agendamentos"
-            element={(
-              <ProtectedRoute
-                isLogged={isUserLogged}
-                defineRole={defineRole}
-                /* Page={Agenda} */
-              />
-              )}
-          />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/servicos" element={<Services />} />
 
           <Route
             path="/meus-agendamentos"
             element={(
-              <UserProtectedRoute
+              <ProtectedRoute
                 isLogged={isUserLogged}
-                roleMatches={roleMatches}
-                defineRole={defineRole}
+                /* defineRole={defineRole} */
                 /* Page={Agenda} */
               />
             )}
           />
         </Routes>
-        <DateRangePicker />
-      </body>
+        {/* <DateRangePicker /> */}
+      </div>
       <Footer />
     </div>
   );

@@ -40,35 +40,37 @@ const App = () => {
 
   return (
     <div>
-      <Navbar isUserLogged={isUserLogged} defineRole={defineRole} />
-      <Routes>
-        <Route path="/login" element={<Login loginUser={loginUser} />} />
-        <Route path="/register" element={<SignUp />} />
+      <body>
+        <Navbar isUserLogged={isUserLogged} defineRole={defineRole} />
+        <Routes>
+          <Route path="/login" element={<Login loginUser={loginUser} />} />
+          <Route path="/register" element={<SignUp />} />
 
-        <Route
-          path="/agendamentos"
-          element={(
-            <ProtectedRoute
-              isLogged={isUserLogged}
-              defineRole={defineRole}
-              /* Page={Agenda} */
-            />
-          )}
-        />
+          <Route
+            path="/agendamentos"
+            element={(
+              <ProtectedRoute
+                isLogged={isUserLogged}
+                defineRole={defineRole}
+                /* Page={Agenda} */
+              />
+              )}
+          />
 
-        <Route
-          path="/meus-agendamentos"
-          element={(
-            <UserProtectedRoute
-              isLogged={isUserLogged}
-              roleMatches={roleMatches}
-              defineRole={defineRole}
-              /* Page={Agenda} */
-            />
-          )}
-        />
-      </Routes>
-      <DateRangePicker />
+          <Route
+            path="/meus-agendamentos"
+            element={(
+              <UserProtectedRoute
+                isLogged={isUserLogged}
+                roleMatches={roleMatches}
+                defineRole={defineRole}
+                /* Page={Agenda} */
+              />
+            )}
+          />
+        </Routes>
+        <DateRangePicker />
+      </body>
       <Footer />
     </div>
   );

@@ -20,3 +20,9 @@ h4 {
 h5 {
   font-size: 0.8rem !important;
 }
+
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 120px;
+}

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -22,10 +22,6 @@ const loginSchema = yup.object().shape({
 });
 
 const Login = ({ loginUser }) => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(!show);
-
   const navigate = useNavigate();
 
   const {
@@ -44,8 +40,9 @@ const Login = ({ loginUser }) => {
         const tokenResponse = await login(formData);
 
         localStorage.setItem('token', tokenResponse.token);
+        localStorage.setItem('role', tokenResponse.role);
 
-        loginUser();
+        loginUser(tokenResponse.role);
 
         navigate('/');
       } catch (error) {
@@ -58,10 +55,7 @@ const Login = ({ loginUser }) => {
   });
 
   const backArrow = (
-    <BiLeftArrowAlt
-      size="24px"
-      onClick={() => navigate('/')}
-    />
+    <BiLeftArrowAlt size="24px" onClick={() => navigate('/')} />
   );
 
   return (
@@ -74,7 +68,12 @@ const Login = ({ loginUser }) => {
         <div className="login-img" />
         <div className="login-content">
           <Form onSubmit={handleSubmit}>
-            <Form.Group as={Col} md="12" controlId="login-form">
+            <Form.Group
+              as={Col}
+              md="12"
+              controlId="formBasicEmail"
+              className="login-form"
+            >
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="text"
@@ -92,7 +91,12 @@ const Login = ({ loginUser }) => {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group as={Col} md="12" controlId="login-form">
+            <Form.Group
+              as={Col}
+              md="12"
+              controlId="formBasicPassword"
+              className="login-form"
+            >
               <Form.Label>Senha</Form.Label>
               <Form.Control
                 type="password"
@@ -109,11 +113,10 @@ const Login = ({ loginUser }) => {
                 {errors.password}
               </Form.Control.Feedback>
             </Form.Group>
+            <Button type="submit" className="login-btn">
+              Login
+            </Button>
           </Form>
-
-          <Button type="submit" onClick={handleClose} className="login-btn">
-            Login
-          </Button>
 
           <h4>
             Ainda não é cadastrado?&ensp;

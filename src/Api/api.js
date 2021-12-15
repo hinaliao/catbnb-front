@@ -7,6 +7,7 @@ const api = axios.create({
 const verifyUnauthorizedError = (error) => {
   if (error.response.status === 401) {
     localStorage.removeItem('token');
+    localStorage.removeItem('role');
     window.location.href = '/';
   }
 

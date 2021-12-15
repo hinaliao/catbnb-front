@@ -8,7 +8,8 @@ import {
   SignUp,
   HomePage,
   Services,
-  ProtectedRoute,
+  UserProtectedRoute,
+  HostProtectedRoute,
 } from './Components';
 // import DateRangePicker from './Components/misc/DateRangePicker/DateRangePicker';
 
@@ -20,40 +21,47 @@ const App = () => {
     return !!token;
   };
 
-  // const verifyRole = () => {
-  //   const role = localStorage.getItem('role');
-  //   return !!role;
-  // };
-
-  const [isUserLogged, setIsUserLogged] = useState(verifyLogin());
-
-  const loginUser = () => {
-    setIsUserLogged(true);
+  const verifyRole = () => {
+    const role = localStorage.getItem('role');
+    return role;
   };
 
-  // const [roleMatches, setRoleMatches] = useState(verifyRole());
+  const [isUserLogged, setIsUserLogged] = useState(verifyLogin());
+  const [roleMatches, setRoleMatches] = useState(verifyRole());
 
-  // const defineRole = () => {
-  //   setRoleMatches(true);
-  // };
+  const loginUser = (role) => {
+    setIsUserLogged(true);
+    setRoleMatches(role);
+  };
 
   return (
     <div>
       <div id="body-container">
-        <Navbar isUserLogged={isUserLogged} /* defineRole={defineRole} */ />
+        <Navbar isUserLogged={isUserLogged} />
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login loginUser={loginUser} />} />
           <Route path="/register" element={<SignUp />} />
 
-          <Route path="/" element={<HomePage />} />
           <Route path="/servicos" element={<Services />} />
 
           <Route
-            path="/meus-agendamentos"
+            path="/meus-compromissos"
             element={(
-              <ProtectedRoute
+              <UserProtectedRoute
                 isLogged={isUserLogged}
-                /* defineRole={defineRole} */
+                roleMatches={roleMatches}
+                /* Page={Agenda} */
+              />
+            )}
+          />
+
+          <Route
+            path="/agendamentos"
+            element={(
+              <HostProtectedRoute
+                isLogged={isUserLogged}
+                roleMatches={roleMatches}
                 /* Page={Agenda} */
               />
             )}

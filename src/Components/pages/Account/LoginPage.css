@@ -1,8 +1,8 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 .all-pai {
-  width: 45%;
-  transform: translate(70%, 30%);
+  width: 50%;
+  transform: translate(50%, 50%);
   position: relative;
   justify-content: center;
   align-items: center;
@@ -20,11 +20,11 @@
 
 .login-img {
   border-radius: 200px;
-  width: 32%;
+  width: 30%;
   height: 40vh;
   background-image: url('../../../Images/kitty-login.jpg');
   background-size: cover;  
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
   box-shadow: 10px 8px 5px #D1E3AB;
   padding: 20px;
 }
@@ -37,6 +37,8 @@
 
 .login-form {
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .form-label {
@@ -74,7 +76,6 @@ h4 > a:hover {
 .login-btn:hover {
   background-color: #d1e3ab;
   color: #4b4278;
-  transition: 0.4s;
 }
 
 @media (max-width: 991.98px) {
@@ -84,6 +85,7 @@ h4 > a:hover {
   }
 
   .login-img {
+    width: 30%;
     height: 28vh;
   }
 }

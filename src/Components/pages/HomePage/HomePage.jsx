@@ -60,8 +60,8 @@ const HomePage = () => {
       </div>
       <div className="viag">
         <h2>Viaje com sossego</h2>
-        <h2>sabendo que seu pet está</h2>
-        <h2>sendo bem cuidado</h2>
+        <h2>sabendo que seu pet</h2>
+        <h2>está sendo bem cuidado</h2>
       </div>
     </div>
   );

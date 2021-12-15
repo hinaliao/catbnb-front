@@ -5,13 +5,13 @@ import logo from '../../../Images/logo.png';
 
 import style from './Navbar.module.css';
 
-const NavBar = () => {
+const NavBar = ({ isUserLogged }) => {
   return (
     <div className={style.Navbar}>
       <Link to="/">
         <img src={logo} alt="CatBnB Logo" />
       </Link>
-      <Navigation />
+      <Navigation isUserLogged={isUserLogged} />
     </div>
   );
 };

@@ -51,7 +51,7 @@ const SignUp = () => {
 
         localStorage.setItem('token', tokenResponse.token);
 
-        navigate('/my-projects');
+        navigate('/');
       } catch (error) {
         setErrors({
           email: error.response.data.error,
@@ -77,7 +77,12 @@ const SignUp = () => {
         <div className="signup-img" />
         <div className="signup-content">
           <Form onSubmit={handleSubmit}>
-            <Form.Group as={Col} md="12" controlId="signup-form">
+            <Form.Group
+              as={Col}
+              md="12"
+              controlId="formBasicName"
+              className="signup-form"
+            >
               <Form.Label>Nome</Form.Label>
               <Form.Control
                 type="text"
@@ -95,7 +100,12 @@ const SignUp = () => {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group as={Col} md="12" controlId="signup-form">
+            <Form.Group
+              as={Col}
+              md="12"
+              controlId="formBasicEmail"
+              className="signup-form"
+            >
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="text"
@@ -113,7 +123,12 @@ const SignUp = () => {
               </Form.Control.Feedback>
             </Form.Group>
 
-            <Form.Group as={Col} md="12" controlId="signup-form">
+            <Form.Group
+              as={Col}
+              md="12"
+              controlId="formBasicPassword"
+              className="signup-form"
+            >
               <Form.Label>Senha</Form.Label>
               <Form.Control
                 type="password"
@@ -134,12 +149,11 @@ const SignUp = () => {
             <Button type="submit" className="signup-btn">
               Cadastre-se
             </Button>
-
-            <h4>
-              Já possui uma conta?&ensp;
-              <Link to="/login">Login</Link>
-            </h4>
           </Form>
+          <h4>
+            Já possui uma conta?&ensp;
+            <Link to="/login">Login</Link>
+          </h4>
         </div>
       </div>
     </div>

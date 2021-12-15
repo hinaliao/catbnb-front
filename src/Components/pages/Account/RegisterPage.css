@@ -1,31 +1,32 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 .all-pai {
-  width: 45%;  
-  transform: translate(70%, 30%);
+  width: 50%;
+  transform: translate(50%, 80%);
   position: relative;
   justify-content: center;
   align-items: center;
-  align-content: center;  
+  align-content: center;
 }
 
 .all {
-  width: 100%;  
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  position: absolute; 
+  position: absolute;
 }
 
 .signup-img {
   border-radius: 200px;
   width: 32%;
-  height: 45vh;
+  height: 50vh;
   background-image: url('../../../Images/kitty-signup.jpg');
   background-size: cover;  
   background-repeat: no-repeat;
-  box-shadow: 10px 8px 5px #D1E3AB;
+  background-position: center;
+  box-shadow: 10px 8px 5px #d1e3ab;
   padding: 20px;
 }
 
@@ -37,6 +38,8 @@
 
 .signup-form {
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .form-label {
@@ -78,7 +81,6 @@ Form > h4 {
 .signup-btn:hover {
   background-color: #d1e3ab;
   color: #4b4278;
-  transition: 0.4s;
 }
 
 @media (max-width: 991.98px) {

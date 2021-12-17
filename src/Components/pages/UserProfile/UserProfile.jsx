@@ -7,36 +7,23 @@ import {
   Card, Modal, Button, Form,
 } from 'react-bootstrap';
 
-// import Pets from '../Pets/Pets';
-import { getUser, removeOneCat } from '../../../Api/api';
-// import { removeOneCat } from '../../../Api/api';
+import { getUser } from '../../../Api/api';
 
 const UserProfile = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  // const [pets, setPets] = useState([]);
   const [loggedOut, setLoggedOut] = useState(false);
 
-  // const [user, setUser] = useState();
+  const [user, setUser] = useState('');
 
-  // const retrieveUserData = async () => {
-  //   try {
-  //     const token = localStorage.getItem('token');
-  //     const userName = await getUser(token);
-  //     setUser(userName);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  useEffect(async () => {
-    try {
+  useEffect(() => {
+    const fetchData = async () => {
       const token = localStorage.getItem('token');
-      const userName = await getUser('61bba5c516816ece5b071dd2', token);
-      console.log(userName);
-      // setUser(userName);
-    } catch (error) {
-      console.log(error);
-    }
+      const response = await getUser(token);
+      setUser(response);
+    };
+    fetchData();
   }, []);
 
   const handleClose = () => setOpen(false);
@@ -52,24 +39,28 @@ const UserProfile = () => {
     navigate('/', { replace: true });
   }
 
-  const deleteCatRegister = async (petId) => {
-    try {
-      const token = localStorage.getItem('token');
-      const removePet = await removeOneCat(petId, token);
-      petId(removePet);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <>
       <div>
-        <Card style={{ width: '32vw' }} className="user-card">
+        <Card style={{ width: '28vw' }} className="user-card">
           <Card.Body>
-            <Card.Title>name</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">email</Card.Subtitle>
+            <Card.Title>{user.name}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">
+              {user.email}
+            </Card.Subtitle>
             <Card.Text>Gatitos</Card.Text>
+            {/* <div className="pets-container">
+              {pets.map((pet) => (
+                <a
+                  className="project-card"
+                  href="#"
+                  data-toggle="modal"
+                  onClick={handleShow}
+                >
+                  <p>{pet.name}</p>
+                </a>
+              ))}
+            </div> */}
             <div className="add-edit-catitos">
               <button type="button" onClick={handleShow}>
                 + adicionar gato
@@ -177,7 +168,7 @@ const UserProfile = () => {
           <Button
             className="modal-btn"
             onClick={() => {
-              deleteCatRegister();
+              // deleteCatRegister();
               handleClose();
             }}
           >
@@ -189,11 +180,7 @@ const UserProfile = () => {
         </Modal.Footer>
       </Modal>
 
-      <button
-        type="button"
-        onClick={() => logout()}
-        className="logout-btn"
-      >
+      <button type="button" onClick={() => logout()} className="logout-btn">
         Log out
       </button>
     </>

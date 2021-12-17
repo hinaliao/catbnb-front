@@ -63,3 +63,25 @@ export const createOneAgenda = async (reservationId, body, token) => {
 
   return response.data;
 };
+
+export const getUser = async (userId, token) => {
+  const response = await api.get(`/meu-perfil/${userId}`, setHeaders(token));
+
+  return response.data;
+};
+
+export const getPets = async (petName, token) => {
+  const response = await api.get(`/pets?name=${petName}`, setHeaders(token));
+
+  return response.data;
+};
+
+export const createOnePet = async (body, token) => {
+  const response = await api.post(
+    '/pets/registerNewPet',
+    body,
+    setHeaders(token),
+  );
+
+  return response.data;
+};

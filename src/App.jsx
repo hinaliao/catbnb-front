@@ -11,7 +11,7 @@ import {
   UserProtectedRoute,
   HostProtectedRoute,
 } from './Components';
-// import DateRangePicker from './Components/misc/DateRangePicker/DateRangePicker';
+import DatePicker from './Components/misc/DatePicker/DatePicker';
 
 import './App.css';
 
@@ -67,7 +67,7 @@ const App = () => {
             )}
           />
         </Routes>
-        {/* <DateRangePicker /> */}
+        <DatePicker />
       </div>
       <Footer />
     </div>

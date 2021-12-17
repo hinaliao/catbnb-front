@@ -1,0 +1,56 @@
+.form-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  color: #4b4278;
+}
+
+.modal-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  color: #4b4278;
+}
+
+.div-pai {
+  display: flex;
+}
+
+.div-gen {
+  margin-right: 8px;
+}
+
+.modal-btn {
+  width: 15vw;
+  color: #fff;
+  background-color: #554a8bec;
+  border-color: #554a8bec;
+  border-radius: 20px;
+}
+
+.modal-btn:first-child {
+  width: 14vw;
+  color: #fff;
+  background-color: #db505ee5;
+  border-color: #db5562c7;
+  border-radius: 20px;
+}
+
+.modal-btn:first-child:hover {
+  width: 14vw;
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 20px;
+}
+
+.modal-btn:hover {
+  width: 15vw;
+  color: #fff;
+  background-color: #4b4278;
+  border-color: #4b4278;  
+}
+
+.modal-btn:focus {
+  color: #fff;
+  background-color: #4b4278;
+  border-color: #4b4278; 
+}

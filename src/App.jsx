@@ -8,6 +8,7 @@ import {
   SignUp,
   HomePage,
   Services,
+  UserProfile,
   UserProtectedRoute,
   HostProtectedRoute,
 } from './Components';
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/register" element={<SignUp />} />
 
           <Route path="/servicos" element={<Services />} />
+          <Route path="/meu-perfil" element={<UserProfile />} />
 
           <Route
             path="/meus-compromissos"

@@ -49,11 +49,11 @@
 
 .btn-reserva{
     border-radius: 18px;
-    background-color: #4B4278;
+    background-color: #4b4278db;
     border: transparent;
 }
 .btn-reserva:hover{
-    background-color: #4b4278db;
+    background-color: #4B4278;
 }
 .btn-reserva:focus{
     background-color: #4B4278;

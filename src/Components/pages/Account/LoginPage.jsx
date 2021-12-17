@@ -54,6 +54,7 @@ const Login = ({ loginUser }) => {
     },
   });
 
+  // botao de voltar - importar e chamar no template
   const backArrow = (
     <BiLeftArrowAlt size="24px" onClick={() => navigate('/')} />
   );

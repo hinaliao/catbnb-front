@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import { addDays } from 'date-fns';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -41,7 +40,6 @@ const Calendar = () => {
         locale="pt"
         inline
       />
-      <Button type="submit" onClick={handleClick}>Consultar data</Button>
     </>
   );
 };

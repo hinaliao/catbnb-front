@@ -33,6 +33,11 @@ export const login = async (formData) => {
   return response.data;
 };
 
+export const getHostsDays = async (userWeekDays) => {
+  const response = await api.get(`/auth/${userWeekDays}`);
+  return response.data;
+};
+
 export const getReservations = async (searchTitle, token) => {
   const response = await api.get(
     `/reservation?title=${searchTitle}`,

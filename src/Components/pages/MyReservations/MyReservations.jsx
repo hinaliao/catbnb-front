@@ -1,52 +1,64 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-// import {
-//   Accordion, Badge, Dropdown,
-// } from 'react-bootstrap';
-// import Template from '../../templates/Template/Template';
-// import { getReservations } from '../../../Api/api';
+
 import React, { useState, useEffect } from 'react';
+import DatePicker from 'react-datepicker';
 import { Accordion, Badge } from 'react-bootstrap';
-import { userGetReservations } from '../../../Api/api';
+import 'react-datepicker/dist/react-datepicker.css';
 import './MyReservations.css';
+import { getHostsDays } from '../../../Api/api';
+// import pt from 'date-fns/locale/pt';
+
+// registerLocale('pt', pt);
 
 const Services = () => {
-  const [reservations, setReservations] = useState([]);
-  const [searchTitle, setSearchTitle] = useState('');
+  const [foundUsers, setFoundUsers] = useState([]);
+  const [userWeekDays, setUserWeekDays] = useState();
+  const [startDate, setStartDate] = useState(new Date());
+  console.log(startDate.getDay());
 
-  const getReservationByTitle = async () => {
-    const foundReservations = await userGetReservations(searchTitle);
+  const getHosts = async () => {
+    const foundReservations = await getHostsDays(userWeekDays);
 
-    setReservations(foundReservations);
+    setFoundUsers(foundReservations);
   };
 
-  console.log(setSearchTitle);
+  console.log(setUserWeekDays);
+
+  const handleChangeDate = (date) => {
+    setStartDate(date);
+    setUserWeekDays(date.getDay());
+  };
 
   useEffect(() => {
-    getReservationByTitle();
-  }, [searchTitle]);
+    if (userWeekDays) {
+      getHosts();
+    }
+  }, [userWeekDays]);
 
   return (
-    <div>
-      {
-        reservations.map((project) => (
+    <div className="container">
+      <DatePicker className="datepicker" selected={startDate} onChange={handleChangeDate} />
+      <div className="accordion-container">
+        {
+
+        foundUsers.map((host) => (
 
           <Accordion className="accordion">
 
             <Accordion.Item eventKey="0">
               <Accordion.Header>
                 <div className="accordionheader">
-                  <h3>Julia</h3>
-                  <h6>Pinheiros, SP</h6>
-                  <Badge bg="success">Disponível</Badge>
-                  <Badge bg="primary">{project.title}</Badge>
+                  <h3>{host.name}</h3>
+                  <h6>{host.email}</h6>
+                  <Badge bg="primary">{host.title}</Badge>
                 </div>
               </Accordion.Header>
               <Accordion.Body>
                 <div className="div-sobre">
                   <h4>Sobre</h4>
                   <p>
-                    Tenho duas gatinhas muito fofinhas e bem brincalhonas. Tenho vários brinquedinhos e petiscos saudáveis que podem ajudar a incentivar uma vida mais saudável e animada do seu gatinho!
+                    {host.about}
                   </p>
                 </div>
                 <div>
@@ -64,6 +76,7 @@ const Services = () => {
 
         ))
       }
+      </div>
     </div>
   );
 };

@@ -50,12 +50,12 @@ const NavLinks = (props) => {
               >
                 Login
               </button>
-            ) : verifyRole === 'costumer' ? (
+            ) : verifyRole === 'Customer' ? (
               <button
                 type="button"
                 onClick={() => {
                   closeMenu();
-                  navigate('/meu-perfil');
+                  navigate('/host-profile');
                 }}
               >
                 Meu Perfil
@@ -65,7 +65,7 @@ const NavLinks = (props) => {
                 type="button"
                 onClick={() => {
                   closeMenu();
-                  navigate('/host-perfil');
+                  navigate('/meu-perfil');
                 }}
               >
                 Meu Perfil

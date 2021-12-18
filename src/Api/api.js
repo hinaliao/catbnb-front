@@ -33,6 +33,11 @@ export const login = async (formData) => {
   return response.data;
 };
 
+export const getHostsDays = async (userWeekDays) => {
+  const response = await api.get(`/auth/${userWeekDays}`);
+  return response.data;
+};
+
 export const getReservations = async (searchTitle, token) => {
   const response = await api.get(
     `/reservation?title=${searchTitle}`,
@@ -76,8 +81,20 @@ export const getUser = async (token) => {
   return response.data;
 };
 
-export const getPets = async (petName, token) => {
-  const response = await api.get(`/pets?name=${petName}`, setHeaders(token));
+export const editUser = async (token) => {
+  const response = await api.put('/meu-perfil', setHeaders(token));
+
+  return response.data;
+};
+
+export const deleteUser = async (token) => {
+  const response = await api.delete('/meu-perfil', setHeaders(token));
+
+  return response.data;
+};
+
+export const getPets = async (token) => {
+  const response = await api.get('/pets', setHeaders(token));
 
   return response.data;
 };
@@ -92,14 +109,14 @@ export const createOnePet = async (body, token) => {
   return response.data;
 };
 
-export const removeOneCat = async (petId, token) => {
-  const response = await api.delete(`/pets/${petId}`, setHeaders(token));
+export const editOneCat = async (petId, body, token) => {
+  const response = await api.put(`/pets/${petId}`, body, setHeaders(token));
 
   return response.data;
 };
 
-export const deleteUser = async (token) => {
-  const response = await api.delete('/meu-perfil', setHeaders(token));
+export const removeOneCat = async (petId, token) => {
+  const response = await api.delete(`/pets/${petId}`, setHeaders(token));
 
   return response.data;
 };

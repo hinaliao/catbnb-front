@@ -9,6 +9,7 @@ import {
   HomePage,
   Services,
   UserProfile,
+  EditUserProfile,
   UserProtectedRoute,
   HostProtectedRoute,
 } from './Components';
@@ -46,6 +47,7 @@ const App = () => {
 
           <Route path="/servicos" element={<Services />} />
           <Route path="/meu-perfil" element={<UserProfile />} />
+          <Route path="/editar-perfil" element={<EditUserProfile />} />
 
           <Route
             path="/meus-compromissos"

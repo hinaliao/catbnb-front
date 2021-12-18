@@ -40,7 +40,7 @@
 
 .card {
   align-content: flex-start;
-  padding: 1.6em;
+  padding: .8em;
   padding-bottom: 0;
 }
 
@@ -52,14 +52,14 @@
 }
 
 .card-subtitle {
-  margin-bottom: 1.5em !important;
+  margin-bottom: 1.2em !important;
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
   color: #4b4278;
 }
 
 .card-text {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-family: 'Quicksand', sans-serif;
   font-size: 22px;
   color: #4b4278;
@@ -113,13 +113,13 @@
   width: 15vw;
   color: #fff;
   background-color: #4b4278;
-  border-color: #4b4278;  
+  border-color: #4b4278;
 }
 
 .modal-btn:focus {
   color: #fff;
   background-color: #4b4278;
-  border-color: #4b4278; 
+  border-color: #4b4278;
 }
 
 .logout-btn:last-child {
@@ -133,4 +133,23 @@
   border-radius: 25px;
   padding: 5px 20px;
   margin: 5vh 14vw;
+}
+
+.pets-name {  
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.pets-name li:hover {  
+  color: #116969;
+  text-decoration: underline;
+}
+
+.pets-name > li {
+  margin-bottom: .5em;
+  padding-top: 2px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #4b4278;
 }

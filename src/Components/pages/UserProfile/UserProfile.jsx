@@ -1,17 +1,11 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UserProfile.css';
 
-import {
-  Card, Modal,
-} from 'react-bootstrap';
+import { Card, Modal } from 'react-bootstrap';
 
-import ModalCreatePet from '../CreatePet/CreatePet';
-import ModalEditPet from '../EditPet/EditPet';
+import ModalCreatePet from '../../misc/CreatePet/CreatePet';
+import ModalEditPet from '../../misc/EditPet/EditPet';
 
 import { getUser, getPets } from '../../../Api/api';
 
@@ -58,7 +52,7 @@ const UserProfile = () => {
   return (
     <>
       <div>
-        <Card style={{ width: '28vw' }} className="user-card">
+        <Card className="user-card">
           <Card.Body>
             <Card.Title>{user.name}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">

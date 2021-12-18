@@ -1,12 +1,10 @@
-/* eslint-disable no-use-before-define */
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import './EditPet.css';
+import './CreatePet.css';
 
-import { editOneCat, getPets, removeOneCat } from '../../../Api/api';
+import { createOnePet, getPets } from '../../../Api/api';
 
 const petSchema = yup.object().shape({
   name: yup
@@ -27,7 +25,7 @@ const petSchema = yup.object().shape({
   observations: yup.string().max(150, 'Maximum of 150 characters'),
 });
 
-const EditPet = ({ handleClose, setPets, selectedPet }) => {
+const CreatePet = ({ handleClose, setPets }) => {
   const {
     values,
     touched,
@@ -35,33 +33,33 @@ const EditPet = ({ handleClose, setPets, selectedPet }) => {
     handleChange,
     handleBlur,
     handleSubmit,
+    setTouched,
+    setValues,
   } = useFormik({
     initialValues: {
-      name: selectedPet.name || '',
-      gender: selectedPet.gender || '',
-      castrated: selectedPet.castrated,
-      age: selectedPet.age || '',
-      vaccinated: selectedPet.vaccinated,
-      observations: selectedPet.observations || '',
+      name: '',
+      gender: '',
+      castrated: true,
+      age: '',
+      vaccinated: true,
+      observations: '',
     },
     validationSchema: petSchema,
     onSubmit: async (formData) => {
       const token = localStorage.getItem('token');
-      await editOneCat(selectedPet._id, formData, token);
+      await createOnePet(formData, token);
 
       const cats = await getPets(token);
       setPets(cats);
+      handleClearForm();
       handleClose();
     },
   });
 
-  const handleDeletePet = async () => {
-    const token = localStorage.getItem('token');
-    await removeOneCat(selectedPet._id, token);
-    const cats = await getPets(token);
-    setPets(cats);
-    handleClose();
-  };
+  function handleClearForm() {
+    setValues({ title: '', description: '' });
+    setTouched({ title: false, description: false });
+  }
 
   return (
     <>
@@ -170,8 +168,8 @@ const EditPet = ({ handleClose, setPets, selectedPet }) => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="modal-btn" onClick={handleDeletePet}>
-            Deletar
+          <Button className="modal-btn" onClick={() => handleClose()}>
+            Cancelar
           </Button>
           <Button type="submit" className="modal-btn">
             Salvar
@@ -182,4 +180,4 @@ const EditPet = ({ handleClose, setPets, selectedPet }) => {
   );
 };
 
-export default EditPet;
+export default CreatePet;

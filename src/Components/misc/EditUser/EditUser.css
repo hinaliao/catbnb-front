@@ -1,0 +1,37 @@
+.edit-profile-container {
+  width: 40vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.edit-form-input {
+  border: 0.5 px solid #4b4278;
+  border-radius: 25 px;
+  margin: 4vh 0;
+}
+
+button.edit-btn {
+  width: 22vw;
+  background-color: #4b4278;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
+  box-shadow: none;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 5px 20px;
+  margin-left: 9vw;
+}
+
+button.edit-btn:hover {
+  border: 2px solid #d1e3ab;
+  background: linear-gradient(
+    90deg,
+    rgb(192, 214, 145) 0%,
+    rgba(209, 227, 171, 1) 100%
+  );
+  transition: all 0.4s ease-in-out;
+  color: #4b4278;
+}

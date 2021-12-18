@@ -78,6 +78,11 @@ h4 > a:hover {
   color: #4b4278;
 }
 
+.login-btn:focus {
+  background-color: #4b4278;
+  color: #fff;
+}
+
 @media (max-width: 991.98px) {
   .all-pai {
     width: 80vw;

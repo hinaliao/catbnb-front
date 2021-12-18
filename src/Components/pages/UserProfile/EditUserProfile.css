@@ -1,0 +1,19 @@
+.edit-profile-container > form-control {
+  border: 0.5 px solid #4b4278;
+  border-radius: 25 px;
+  margin-bottom: 10 px;
+  width: 40 vw;
+}
+
+.edit-btn button {
+  width: 22vw;
+  background-color: #4b4278;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 17px;
+  box-shadow: none;
+  border: 2px solid #4b4278;
+  border-radius: 25px;
+  padding: 5px 20px;
+  margin: 8px;
+}

@@ -9,9 +9,9 @@
   position: absolute;
   z-index: 1;
   align-items: flex-end;
-  padding-right: 30px;
-  width: 180px;
-  height: 210px;
+  padding-right: 2vw;
+  width: 13vw;
+  height: 33vh;
   background-color: #d1e3ab;
   border-radius: 45px;
   top: 25px;
@@ -92,9 +92,9 @@ nav ul li button:hover {
 
   .Navbar nav > ul {
     z-index: 1;
-    width: 130px;
-    height: 160px;
-    padding-right: 8px;
+    width: 15vw;
+    height: 27vh;
+    padding-right: 1.5vw;
     right: 9%;
   }
 

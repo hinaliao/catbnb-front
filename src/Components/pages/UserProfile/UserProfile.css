@@ -1,3 +1,19 @@
+.container-user {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card-btn-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+}
+
 .user-card {
   border-radius: 20px;
   margin-top: 5%;
@@ -120,6 +136,10 @@
   color: #fff;
   background-color: #4b4278;
   border-color: #4b4278;
+}
+
+.logout-btn{
+  position: inherit;
 }
 
 .logout-btn:last-child {

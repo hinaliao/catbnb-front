@@ -9,6 +9,7 @@ import './UserProfile.css';
 import {
   Card, Modal,
 } from 'react-bootstrap';
+import Agenda from '../Agenda/Agenda';
 
 import ModalCreatePet from '../CreatePet/CreatePet';
 import ModalEditPet from '../EditPet/EditPet';
@@ -56,49 +57,50 @@ const UserProfile = () => {
   }
 
   return (
-    <>
-      <div>
-        <Card style={{ width: '28vw' }} className="user-card">
-          <Card.Body>
-            <Card.Title>{user.name}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {user.email}
-            </Card.Subtitle>
-            <Card.Text>Gatitos</Card.Text>
-            <div className="pets-container">
-              {pets.map((pet) => (
-                <a
-                  className="pets-name"
-                  type="button"
-                  href="#"
-                  key={pet._id}
-                  data-toggle="modal"
-                  onClick={() => {
-                    setSelectedPet(pet);
-                    handleShowEdit();
-                  }}
-                >
-                  <li>{pet.name}</li>
-                </a>
-              ))}
-            </div>
-            <div className="add-edit-catitos">
-              <button type="button" onClick={handleShow}>
-                + adicionar gato
-              </button>
-              <button type="button" onClick={() => navigate('/editar-perfil')}>
-                editar perfil
-              </button>
-            </div>
-          </Card.Body>
-        </Card>
-      </div>
+    <div className="container-user">
+      <div className="card-btn-container">
+        <div>
+          <Card style={{ width: '28vw' }} className="user-card">
+            <Card.Body>
+              <Card.Title>{user.name}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                {user.email}
+              </Card.Subtitle>
+              <Card.Text>Gatitos</Card.Text>
+              <div className="pets-container">
+                {pets.map((pet) => (
+                  <a
+                    className="pets-name"
+                    type="button"
+                    href="#"
+                    key={pet._id}
+                    data-toggle="modal"
+                    onClick={() => {
+                      setSelectedPet(pet);
+                      handleShowEdit();
+                    }}
+                  >
+                    <li>{pet.name}</li>
+                  </a>
+                ))}
+              </div>
+              <div className="add-edit-catitos">
+                <button type="button" onClick={handleShow}>
+                  + adicionar gato
+                </button>
+                <button type="button" onClick={() => navigate('/editar-perfil')}>
+                  editar perfil
+                </button>
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
 
-      <Modal show={open} onHide={handleClose}>
-        <ModalCreatePet handleClose={handleClose} setPets={setPets} />
-      </Modal>
+        <Modal show={open} onHide={handleClose}>
+          <ModalCreatePet handleClose={handleClose} setPets={setPets} />
+        </Modal>
 
-      {openEdit && (
+        {openEdit && (
         <Modal show onHide={handleCloseEdit}>
           <ModalEditPet
             handleClose={handleCloseEdit}
@@ -106,12 +108,13 @@ const UserProfile = () => {
             selectedPet={selectedPet}
           />
         </Modal>
-      )}
-
-      <button type="button" onClick={() => logout()} className="logout-btn">
-        Log out
-      </button>
-    </>
+        )}
+        <button type="button" onClick={() => logout()} className="logout-btn">
+          Log out
+        </button>
+      </div>
+      <Agenda />
+    </div>
   );
 };
 

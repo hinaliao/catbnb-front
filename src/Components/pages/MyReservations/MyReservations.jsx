@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { Accordion, Badge } from 'react-bootstrap';
-import './MyReservations.css';
+// import './MyReservations.css';
 import { getHostsDays } from '../../../Api/api';
 import 'react-datepicker/dist/react-datepicker.css';
 // import pt from 'date-fns/locale/pt';

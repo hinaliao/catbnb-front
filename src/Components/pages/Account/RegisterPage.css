@@ -83,6 +83,11 @@ Form > h4 {
   color: #4b4278;
 }
 
+.signup-btn:focus {
+  background-color: #4b4278;
+  color: #fff;
+}
+
 @media (max-width: 991.98px) {
   .all-pai {
     width: 80vw;

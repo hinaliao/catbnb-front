@@ -91,6 +91,7 @@ nav ul li button:hover {
   }
 
   .Navbar nav > ul {
+    border-radius: 35px;
     z-index: 1;
     width: 15vw;
     height: 27vh;
@@ -105,14 +106,30 @@ nav ul li button:hover {
   li:first-child {
     padding-top: 15px;
   }
+
+  nav ul li button {
+    width: 23vw;
+  } 
 }
 
 @media (max-width: 575.98px) {
   .Navbar nav > ul {
     z-index: 1;
-    width: 130px;
-    height: 160px;
+    width: 36vw;
+    height: 26vh;
     padding-right: 8px;
-    right: 7%;
+    right: 8%;
   }
+}
+
+@media (max-width: 360px) {
+  .Navbar nav > ul {
+    z-index: 1;
+    width: 37vw;
+    height: 27vh;
+  }
+
+  nav ul li button {
+    width: 22vw;
+  }  
 }

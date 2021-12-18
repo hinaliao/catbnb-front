@@ -1,7 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UserProfile.css';
@@ -11,8 +7,8 @@ import {
 } from 'react-bootstrap';
 import Agenda from '../Agenda/Agenda';
 
-import ModalCreatePet from '../CreatePet/CreatePet';
-import ModalEditPet from '../EditPet/EditPet';
+import ModalCreatePet from '../../misc/CreatePet/CreatePet';
+import ModalEditPet from '../../misc/EditPet/EditPet';
 
 import { getUser, getPets } from '../../../Api/api';
 

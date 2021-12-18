@@ -81,8 +81,8 @@ export const getUser = async (token) => {
   return response.data;
 };
 
-export const editUser = async (token) => {
-  const response = await api.put('/meu-perfil', setHeaders(token));
+export const editUser = async (body, token) => {
+  const response = await api.put('/meu-perfil', body, setHeaders(token));
 
   return response.data;
 };

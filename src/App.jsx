@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Navbar from './Components/pages/Navbar/Navbar';
-import Footer from './Components/pages/Footer/Footer';
+import Navbar from './Components/misc/Navbar/Navbar';
+import Footer from './Components/misc/Footer/Footer';
 import {
   Login,
   SignUp,
@@ -44,10 +44,29 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login loginUser={loginUser} />} />
           <Route path="/register" element={<SignUp />} />
-
           <Route path="/servicos" element={<Services />} />
-          <Route path="/meu-perfil" element={<UserProfile />} />
-          <Route path="/editar-perfil" element={<EditUserProfile />} />
+
+          <Route
+            path="/meu-perfil"
+            element={(
+              <UserProtectedRoute
+                isLogged={isUserLogged}
+                roleMatches={roleMatches}
+                Page={UserProfile}
+              />
+            )}
+          />
+
+          <Route
+            path="/editar-perfil"
+            element={(
+              <UserProtectedRoute
+                isLogged={isUserLogged}
+                roleMatches={roleMatches}
+                Page={EditUserProfile}
+              />
+            )}
+          />
 
           <Route
             path="/meus-compromissos"
@@ -71,7 +90,6 @@ const App = () => {
             )}
           />
         </Routes>
-        {/* <DateRangePicker /> */}
       </div>
       <Footer />
     </div>

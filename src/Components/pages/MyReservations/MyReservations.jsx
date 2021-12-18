@@ -4,9 +4,9 @@
 import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { Accordion, Badge } from 'react-bootstrap';
-// import './MyReservations.css';
-import { getHostsDays } from '../../../Api/api';
 import 'react-datepicker/dist/react-datepicker.css';
+import './MyReservations.css';
+import { getHostsDays } from '../../../Api/api';
 // import pt from 'date-fns/locale/pt';
 
 // registerLocale('pt', pt);
@@ -39,7 +39,9 @@ const Services = () => {
   return (
     <div className="container">
       <DatePicker className="datepicker" selected={startDate} onChange={handleChangeDate} />
-      {
+      <div className="accordion-container">
+        {
+
         foundUsers.map((host) => (
 
           <Accordion className="accordion">
@@ -74,6 +76,7 @@ const Services = () => {
 
         ))
       }
+      </div>
     </div>
   );
 };

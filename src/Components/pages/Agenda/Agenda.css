@@ -1,1 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+.card{
+    width: 30vw;
+    margin-top: 5%;
+  margin-left: 0;
+}

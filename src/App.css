@@ -13,7 +13,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+li {
   font-family: 'Quicksand', sans-serif;
   color: #4b4278;
 }
@@ -28,7 +30,7 @@ h5 {
 
 #body-container {
   position: relative;
-  min-height: 90vh;
+  min-height: 140vh;
   padding-bottom: 100px;
 }
 

@@ -65,5 +65,5 @@ Should you want to contribute to our project, please, do not hesitate to fork th
 
 ## Authors and Version Control
 
-REACT SPA aplication developed by **Hina Liao - https://github.com/hinaliao/**, **Júlia Sakakibara - https://github.com/juliasakakibara/** & **Piero Naraya Basto de Sá - https://github.com/desapiero/** - *CatBnb API App Version beta 1.0* - 
+React SPA aplication developed by **Hina Liao - https://github.com/hinaliao/**, **Júlia Sakakibara - https://github.com/juliasakakibara/** & **Piero Naraya Basto de Sá - https://github.com/desapiero/** - *CatBnb API App Version beta 1.0* - 
 **Published in December 18th, 2021**
